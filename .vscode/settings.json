@@ -3,7 +3,8 @@
         "iostream": "cpp",
         "vector": "cpp",
         "cmath": "cpp",
-        "xstring": "cpp"
+        "xstring": "cpp",
+        "xutility": "cpp"
     },
     "git.ignoreLimitWarning": true
 }

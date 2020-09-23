@@ -3,17 +3,18 @@ using namespace std;
 
 int main()
 {
-    unsigned long long int a, b, div = 1000000007;
+    unsigned long long int a, b, div = 1000000007, excess = 1;
     cin >> a >> b;
-    long res = 1;
-    a %= div, b %= div - 1;
-    while (b > 0)
+    a %= div;
+    while (b / 2 != 0)
     {
-        if (b % 2 > 0)
-            res = res * a % div;
-        a = a * a % div;
+        if (b % 2 != 0)
+        {
+            excess = excess * a % div;
+        }
         b /= 2;
+        a = a * a % div;
     }
-    cout << res;
+    cout << excess * a % div;
     return 0;
 }
