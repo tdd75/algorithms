@@ -4,7 +4,8 @@
         "vector": "cpp",
         "cmath": "cpp",
         "xstring": "cpp",
-        "xutility": "cpp"
+        "xutility": "cpp",
+        "stack": "cpp"
     },
     "git.ignoreLimitWarning": true
 }
