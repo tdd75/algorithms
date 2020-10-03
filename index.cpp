@@ -1,15 +1,16 @@
 #include <iostream>
+#include <vector>
 using namespace std;
 
-struct position {
-    int x;
-    int y;
-} pos1, pos2;
+// vector<int, int> a;
+int main()
+{
+    // a.push_back((1, 2));
+    // a.push_back((2, 5));
+    // a.push_back((3, 6));
+    // a.push_back((4, 7));
 
-int main() {
-    pos1.x = 1;
-    pos1.y = 1;
-    pos2.x = 1;
-    pos2.y = 1;
-    if(pos1.equals(pos2))) cout << "Hello";
+    // cout << a.size();
+
+    cout << "size";
 }

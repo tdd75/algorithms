@@ -5,7 +5,9 @@
         "cmath": "cpp",
         "xstring": "cpp",
         "xutility": "cpp",
-        "stack": "cpp"
+        "stack": "cpp",
+        "deque": "cpp",
+        "utility": "cpp"
     },
     "git.ignoreLimitWarning": true
 }
