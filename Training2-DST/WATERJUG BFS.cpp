@@ -20,17 +20,16 @@ int waterjugBFS(int a, int b, int c)
         p = q.front();
         if (p.x == c || p.y == c)
             return p.step;
-
+            
         // fill jug a
         if (p.x < a)
         {
             if (!visited[a][p.y])
             {
-
                 visited[a][p.y] = true;
                 q.push({a, p.y, p.step + 1});
             }
-            // pour a to b
+            // pour b to a
             if (p.y > 0)
             {
                 int min_xy = min(a - p.x, p.y);
@@ -50,7 +49,7 @@ int waterjugBFS(int a, int b, int c)
                 visited[p.x][b] = true;
                 q.push({p.x, b, p.step + 1});
             }
-            // pour b to a
+            // pour a to b
             if (p.x > 0)
             {
                 int min_xy = min(b - p.y, p.x);

@@ -1,16 +1,14 @@
 #include <iostream>
-#include <vector>
+#include <queue>
 using namespace std;
 
-// vector<int, int> a;
+queue<int> q;
+
 int main()
 {
-    // a.push_back((1, 2));
-    // a.push_back((2, 5));
-    // a.push_back((3, 6));
-    // a.push_back((4, 7));
-
-    // cout << a.size();
-
-    cout << "size";
-}
+    q.push(1);
+    int p = q.front();
+    q.push(3);
+    q.push(5);
+    cout << p;
+    }
