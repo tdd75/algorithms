@@ -2,13 +2,10 @@
 #include <queue>
 using namespace std;
 
-queue<int> q;
-
 int main()
 {
-    q.push(1);
-    int p = q.front();
-    q.push(3);
-    q.push(5);
-    cout << p;
-    }
+    int a[] = {2, 1, 4};
+    int b = a[1];
+    a[1] = 10;
+    cout << b;
+}
