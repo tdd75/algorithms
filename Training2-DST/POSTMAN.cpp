@@ -5,11 +5,11 @@ using namespace std;
 
 struct custommer
 {
-    long long x, m;
+    int x, m;
 } temp;
 vector<custommer> neg, pos;
 
-long long n, k;
+int n, k;
 
 bool sortIncrease(custommer a, custommer b)
 {
@@ -20,14 +20,14 @@ unsigned long long result(vector<custommer> v)
 {
     sort(v.begin(), v.end(), sortIncrease);
     unsigned long long s = 0;
-    long long remain, i = v.size() - 1;
+    int remain, i = v.size() - 1;
     while (i >= 0)
     {
-        long long loop = v[i].m / k;
+        int loop = v[i].m / k;
         if (loop * k != v[i].m)
         {
             loop++;
-            s += v[i].x * loop * 2;
+            s += (long long) v[i].x * loop * 2;
             remain = k * loop - v[i].m;
             i--;
             // back to postoffice
@@ -47,7 +47,7 @@ unsigned long long result(vector<custommer> v)
         }
         else
         {
-            s += v[i].x * (loop)*2;
+            s += (long long) v[i].x * (loop)*2;
             i--;
         }
     }
