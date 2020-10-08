@@ -2,6 +2,7 @@
 #include <algorithm>
 #include <vector>
 using namespace std;
+
 int N, Q, temp;
 vector<int> v;
 
@@ -35,7 +36,7 @@ int main()
             }
             // add new road
             v[p] = c;
-            if (v[p + 1] != c)
+            if (v[p + 1] != v[p])
             {
                 result++;
             }
@@ -49,7 +50,7 @@ int main()
             }
             // add new road
             v[p] = c;
-            if (v[p - 1] != c)
+            if (v[p - 1] != v[p])
             {
                 result++;
             }
@@ -57,15 +58,35 @@ int main()
         else
         {
             // remove old road
-            if (v[p - 1] != v[p] && v[p + 1] != v[p])
+            if (v[p - 1] == v[p + 1])
             {
-                result--;
+                if (v[p - 1] != v[p])
+                {
+                    result -= 2;
+                }
+            }
+            else
+            {
+                if (v[p - 1] != v[p] && v[p + 1] != v[p])
+                {
+                    result--;
+                }
             }
             // add new road
             v[p] = c;
-            if (v[p - 1] != c && v[p + 1] != c)
+            if (v[p - 1] == v[p + 1])
             {
-                result++;
+                if (v[p - 1] != v[p])
+                {
+                    result += 2;
+                }
+            }
+            else
+            {
+                if (v[p - 1] != v[p] && v[p + 1] != v[p])
+                {
+                    result++;
+                }
             }
         }
         cout << result << endl;
