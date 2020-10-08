@@ -4,43 +4,43 @@ using namespace std;
 
 int n, a[N];
 
-long long hist(int l, int r)
+long long hist(int begin, int end)
 {
-    if (l == r)
-        return a[l];
+    if (begin == end)
+        return a[begin];    // exit recursive
 
-    int m = (l + r) / 2;
-    int h = a[m];
-    int index_left = m, index_right = m;
-    long long mid = a[m];
+    int mid = (begin + end) / 2;
+    int h = a[mid];
+    int left = mid, right = mid;
+    long long S_mid = a[mid];
 
-    while (index_left > l || index_right < r)
+    while (left > begin || right < end)
     {
-        while (index_left > l && a[index_left - 1] >= h)
-            index_left--;
-        while (index_right < r && a[index_right + 1] >= h)
-            index_right++;
-        mid = max(mid, (long long)(index_right - index_left + 1) * h);
+        while (left > begin && a[left - 1] >= h)
+            left--;
+        while (right < end && a[right + 1] >= h)
+            right++;
+        S_mid = max(S_mid, (long long)(right - left + 1) * h);
 
-        if (index_left > l)
+        if (left > begin)
         {
-            if (index_right < r)
-                h = max(a[index_left - 1], a[index_right + 1]);
+            if (right < end)
+                h = max(a[left - 1], a[right + 1]);
             else
-                h = a[index_left - 1];
+                h = a[left - 1];
         }
         else
         {
-            if (index_right < r)
-                h = a[index_right + 1];
+            if (right < end)
+                h = a[right + 1];
             else
                 h = 0;
         }
     }
-    long long left = hist(l, m);
-    long long right = hist(m + 1, r);
-
-    return max(mid, max(left, right));
+    long long S_left = hist(begin, mid);
+    long long S_right = hist(mid + 1, end);
+                                                                                                                                                                                                             
+    return max(S_mid, max(S_left, S_right));
 }
 
 int main()
