@@ -10,7 +10,7 @@ void gen()
 {
     int i = m;
     while (i > 0 && (x[i] == n - m + i))
-        i--; // tim motj vi tri ma taij co chua max
+        i--;
     if (i > 0)
     {
         x[i]++;
