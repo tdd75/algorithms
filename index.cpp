@@ -1,9 +1,6 @@
 #include <iostream>
+#include <map>
 using namespace std;
-#define MAX 10000
-
-int n, m;
-int a[MAX];
 
 void gen(int k)
 {
@@ -24,9 +21,26 @@ void gen(int k)
         }
     }
 }
+
 int main()
 {
-    cin >> n >> m;
-    gen(1);
+    int Q, N, T, T2, count;
+    cin >> Q;
+    while (Q--)
+    {
+        cin >> N;
+        T = N * (N + 1) * (N + 2);
+        T2 = T * T;
+        count = 0;
+
+        for (int i = 2; i < T; i++)
+        {
+            if (T2 % i == 0)
+            {
+                count++;
+            }
+        }
+        cout << count << endl;
+    }
     return 0;
 }

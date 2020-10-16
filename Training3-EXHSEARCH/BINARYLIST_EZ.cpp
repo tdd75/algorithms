@@ -1,4 +1,3 @@
-
 #include <iostream>
 using namespace std;
 int n, a[1000];

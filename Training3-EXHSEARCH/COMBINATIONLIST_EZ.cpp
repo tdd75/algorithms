@@ -24,6 +24,7 @@ void gen(int k)
         }
     }
 }
+
 int main()
 {
     cin >> n >> m;
