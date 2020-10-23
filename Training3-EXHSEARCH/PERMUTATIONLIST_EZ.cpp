@@ -1,7 +1,8 @@
 
 #include <iostream>
 using namespace std;
-int n, a[100], d[100];
+int n, a[100];
+bool d[100];
 
 void gen(int k)
 {
@@ -10,7 +11,7 @@ void gen(int k)
         if (!d[i])
         {
             a[k] = i;
-            d[i] = 1;
+            d[i] = true;
             if (k == n)
             {
                 for (int j = 1; j <= n; j++)
@@ -23,7 +24,7 @@ void gen(int k)
             {
                 gen(k + 1);
             }
-            d[i] = 0;
+            d[i] = false;
         }
     }
 }

@@ -1,29 +1,20 @@
 #include <iostream>
-
 using namespace std;
 
-int n, k1, k2;
-int ans = 0;
-int x[100];
+int N, K1, K2;
 
-void Try(int i, int l)
+void process(int k, int K1)
 {
-    if (i > n)
-    {
-        ans += (l >= k1 || l == 0);
-        return;
-    }
-    if (i == 1 || l >= k1)
-        Try(i + 1, 0);
-    if (l < k2)
-        Try(i + 1, l + 1);
-}
+    int a[1000];
+    if ()
+        do
+        {
+            process(k + 1, K1 + 1);
+
+        } while (K1 != K2);
+};
 
 int main()
 {
-    cin >> n >> k1 >> k2;
-    Try(1, 0);
-    cout << ans;
-
-    return 0;
+    cin >> N 1);
 }
