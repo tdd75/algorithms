@@ -16,5 +16,14 @@ void process(int k, int K1)
 
 int main()
 {
+<<<<<<< HEAD:Training3-EXHSEARCH/NURSE..cpp
     cin >> N 1);
 }
+=======
+    cin >> n >> k1 >> k2;
+    Try(1, 0);
+    cout << ans;
+
+    return 0;
+}
+>>>>>>> 9afa44d695399f8165e70e2bee87d885aa05ac8e:Training3-EXHSEARCH/NURSE.cpp
