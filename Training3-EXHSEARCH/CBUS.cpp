@@ -1,6 +1,6 @@
 #include <iostream>
 using namespace std;
-int n, k, mark[35], c[35][35], x[35], best = 2e9;
+int n, k, mark[35], c[35][35], best = 2e9, x[35], cmin = 2e9;
 
 void backtrack(int i, int h, int sum)
 {
@@ -18,7 +18,10 @@ void backtrack(int i, int h, int sum)
         }
         x[i] = j;
         mark[j] = 1;
-        backtrack(i + 1, h + (j > n ? -1 : 1), sum + c[x[i - 1]][x[i]]);
+        if (sum + c[x[i - 1]][x[i]] + cmin * (2 * n - 1) < best)
+        {
+            backtrack(i + 1, h + (j > n ? -1 : 1), sum + c[x[i - 1]][x[i]]);
+        }
         mark[j] = 0;
     }
 }
@@ -31,6 +34,7 @@ int main()
         for (int j = 0; j <= 2 * n; j++)
         {
             cin >> c[i][j];
+            cmin = min(cmin, c[i][j]);
         }
     }
     backtrack(1, 0, 0);
