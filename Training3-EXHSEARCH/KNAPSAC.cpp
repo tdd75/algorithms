@@ -7,8 +7,7 @@ void backtrack(int i, int M, int V)
 {
     if (i > n)
     {
-        if (M <= b)
-            best = max(best, V);
+        best = max(best, V);
         return;
     }
     backtrack(i + 1, M, V);
