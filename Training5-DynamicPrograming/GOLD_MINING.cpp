@@ -7,13 +7,12 @@ int best;
 
 int GM(int i)
 {
-    if (i < L1)
+    mem[i] = a[i];
+    if (i >= L1)
     {
-        mem[i] = a[i];
-        return mem[i];
+        for (int j = (i - L2 > 0) ? (i - L2) : 0; j <= i - L1; j++)
+            mem[i] = max(mem[i], mem[j] + a[i]);
     }
-    for (int j = (i - L2 > 0) ? (i - L2) : 0; j <= i - L1; j++)
-        mem[i] = max(mem[i], mem[j] + a[i]);
     return mem[i];
 }
 
@@ -23,7 +22,6 @@ int main()
     for (int i = 0; i < n; i++)
     {
         cin >> a[i];
-        mem[i] = -1;
     }
     for (int i = 0; i < n; i++)
         best = max(best, GM(i));
