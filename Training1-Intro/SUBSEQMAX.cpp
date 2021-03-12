@@ -2,27 +2,24 @@
 #include <vector>
 using namespace std;
 
-vector<int> a;
+vector<int> a(1000005, 0);
 
 int main()
 {
-    long n, x;
+    int n, x;
     cin >> n;
-    for (int i = 0; i < n; i++)
+    for (int i = 1; i <= n; i++)
+        cin >> a[i];
+    long cur = a[1];
+    long best = cur;
+    for (int i = 2; i <= n; i++)
     {
-        cin >> x;
-        a.push_back(x);
-    }
-    long cur = a[0];
-    long max = cur;
-    for (int i = 1; i < a.size(); i++)
-    {
-        if (cur > 0)
+        if (cur > 0)    
             cur += a[i];
         else
             cur = a[i];
-        max = max > cur ? max : cur;
+        best = max(best, cur);
     }
-    cout << max;
+    cout << best;
     return 0;
 }
